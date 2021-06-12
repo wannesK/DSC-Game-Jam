@@ -5,7 +5,6 @@ using UnityEngine;
 public class CheckPointPos : MonoBehaviour
 {
     private CheckPointManager checkPointManager;
-
     private void Start()
     {
         checkPointManager = GameObject.FindGameObjectWithTag("CheckPointManager").GetComponent<CheckPointManager>();

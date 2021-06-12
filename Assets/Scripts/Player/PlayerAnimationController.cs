@@ -5,15 +5,23 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private Animator anim;
+
+    private float delay = 1f;
+    private float count;
     void Start()
     {
         anim = GetComponent<Animator>();
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (count <= delay)
+        {
+            count += Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.S) && count >= delay)
         {            
             anim.SetTrigger("Crouch");
+            count = 0;
         }
     }
     public void PlayRunningAnim()

@@ -10,9 +10,14 @@ public class CameraControl : MonoBehaviour
     public float minY, maxY;
 
     private Transform player;
-
+    //private CheckPointManager checkPoint;
+    private void Awake()
+    {
+        //checkPoint = GameObject.FindGameObjectWithTag("CheckPointManager").GetComponent<CheckPointManager>();
+    }
     void Start()
     {
+        //transform.position = new Vector3(checkPoint.lastCheckPointPos.x, checkPoint.lastCheckPointPos.y, -10);
         TurnCameraToPlayer();
     }
     void LateUpdate()

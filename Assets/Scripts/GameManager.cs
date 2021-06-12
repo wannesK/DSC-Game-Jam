@@ -11,10 +11,9 @@ public class GameManager : MonoBehaviour
     public Color[] colors;
 
     public CameraControl camControl;
-    public PlayerHealth health;
     public TrapDamage trap;
 
-    private bool parallel = false;
+    public bool parallel = false;
 
     
     void Update()
@@ -32,8 +31,7 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < environments.Length; i++)
                 {
-                    environments[i].GetComponent<Rigidbody2D>().isKinematic = true;
-                    
+                    environments[i].GetComponent<Rigidbody2D>().mass = 40f;                   
                     environments[i].GetComponent<SpriteRenderer>().color = colors[1];
                 }
                 backGrounds[0].SetActive(false);
@@ -50,7 +48,7 @@ public class GameManager : MonoBehaviour
 
                 for (int i = 0; i < environments.Length; i++)
                 {
-                    environments[i].GetComponent<Rigidbody2D>().isKinematic = false;
+                    environments[i].GetComponent<Rigidbody2D>().mass = 5.5f; 
                     environments[i].GetComponent<SpriteRenderer>().color = colors[0];
                 }
 
@@ -62,12 +60,11 @@ public class GameManager : MonoBehaviour
 
             }
             camControl.TurnCameraToPlayer();
-            health.UpdatePlayerHealthText();
             trap.FindPlayerTag();
         }
     }
 
-    private void CheckForParallel()
+    public void CheckForParallel()
     {
         if (parallel == false)
         {

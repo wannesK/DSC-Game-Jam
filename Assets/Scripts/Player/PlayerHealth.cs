@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHealth = 2;
 
     public GameObject[] hearts;
-    public TextMeshProUGUI healtText;
 
     public Animator anim;
     public PlayerMovement movement;
     public ParallelMovement movementP;
+    public PlayerCombat combat;
     public GameManager manager;
     public CameraControl cam;
 
@@ -32,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
 
         transform.position = pointManager.lastCheckPointPos;
 
-        UpdatePlayerHealthText();
         CheckHearts();
     }
 
@@ -54,7 +52,6 @@ public class PlayerHealth : MonoBehaviour
         anim.SetTrigger("Hurt");
 
         CheckHearts();
-        UpdatePlayerHealthText();
 
         if (playerHealth < 1)
         {
@@ -63,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
             movementP.GetComponent<ParallelMovement>().enabled = false;
             manager.GetComponent<GameManager>().enabled = false;
             cam.GetComponent<CameraControl>().enabled = false;
+            combat.GetComponent<PlayerCombat>().enabled = false;
 
             rigid.velocity = new Vector2(0, rigid.velocity.y);
 
@@ -74,10 +72,7 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
-    public void UpdatePlayerHealthText()
-    {
-        healtText.text = "Health : " + playerHealth;
-    }
+
     private void DestroyPlayer()
     {
         //Instantiate(deadEffect, transform.position, Quaternion.identity);

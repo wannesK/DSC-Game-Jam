@@ -58,35 +58,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void HandleMovement()
-    {
-        //rigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    rigidBody2D.velocity = new Vector2(-movementSpeed, rigidBody2D.velocity.y);
-
-        //    if (IsGrounded())
-        //    {
-        //        //CreateDust();
-        //    }
-        //}
-        //else
-        //{
-        //    if (Input.GetKey(KeyCode.D))
-        //    {
-        //        rigidBody2D.velocity = new Vector2(+movementSpeed, rigidBody2D.velocity.y);
-        //        if (IsGrounded())
-        //        {
-        //            //CreateDust();
-        //        }
-
-        //    }
-        //    else //NO KEYS PRESSED
-        //    {
-        //        rigidBody2D.velocity = new Vector2(0, rigidBody2D.velocity.y);
-        //        rigidBody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        //    }
-        //}
-
+    {       
         float h = Input.GetAxisRaw("Horizontal");
         rigidBody2D.velocity = new Vector2(h * movementSpeed, rigidBody2D.velocity.y);
     }

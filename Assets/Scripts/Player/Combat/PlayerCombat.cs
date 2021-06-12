@@ -15,19 +15,12 @@ public class PlayerCombat : MonoBehaviour
     private int attackCounter;
 
     private PlayerCombatAnimationContoller animator;
-    //private ScoreManager scoreManager;
     private ParallelMovement characterMovement;
 
     private void Awake()
     {
         animator = GetComponent<PlayerCombatAnimationContoller>();
         characterMovement = GetComponent<ParallelMovement>();
-        //scoreManager = GameObject.FindGameObjectWithTag("Data").GetComponent<ScoreManager>();
-    }
-    private void Start()
-    {
-        //basicAttackDamage = scoreManager.data.dataAttackDamage; // setting a character attack damage from data
-        //strikeDamage = scoreManager.data.dataStrikeDamage;
     }
 
     void Update()
@@ -94,6 +87,6 @@ public class PlayerCombat : MonoBehaviour
     }
     public void GiveBackMovementSpeed()
     {
-        characterMovement.movementSpeed = 5f;
+        characterMovement.movementSpeed = 4.5f;
     }
 }
