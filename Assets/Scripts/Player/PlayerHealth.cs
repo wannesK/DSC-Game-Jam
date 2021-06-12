@@ -18,15 +18,20 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject deadScreen;
     public GameObject deadEffect;
-    private Rigidbody2D rigid;
 
+    private Rigidbody2D rigid;
+    private CheckPointManager pointManager;
     private void Awake()
     {
         Time.timeScale = 1f;
+        pointManager = GameObject.FindGameObjectWithTag("CheckPointManager").GetComponent<CheckPointManager>();
     }
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+
+        transform.position = pointManager.lastCheckPointPos;
+
         UpdatePlayerHealthText();
         CheckHearts();
     }
@@ -35,6 +40,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("HitBox"))
         {
+            DecreasePlayerHealth();
+        }
+        else if (other.CompareTag("Water"))
+        {
+            rigid.velocity = Vector2.up * 13;
             DecreasePlayerHealth();
         }
     }

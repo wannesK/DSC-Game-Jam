@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 233722341}
   - component: {fileID: 233722343}
-  - component: {fileID: 233722342}
   m_Layer: 0
   m_Name: BG_Decor
   m_TagString: Untagged
@@ -158,20 +157,6 @@ Transform:
   m_Father: {fileID: 920167941}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &233722342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233722340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e656a653e0113c42b1932144b6eedf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cammera: {fileID: 920167940}
-  parallaxEffect: 0.5
 --- !u!212 &233722343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -233,7 +218,6 @@ GameObject:
   m_Component:
   - component: {fileID: 270635687}
   - component: {fileID: 270635689}
-  - component: {fileID: 270635688}
   m_Layer: 0
   m_Name: Middle_Decor
   m_TagString: Untagged
@@ -258,20 +242,6 @@ Transform:
   m_Father: {fileID: 920167941}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &270635688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270635686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e656a653e0113c42b1932144b6eedf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cammera: {fileID: 0}
-  parallaxEffect: 0.2
 --- !u!212 &270635689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -549,7 +519,6 @@ GameObject:
   m_Component:
   - component: {fileID: 602838734}
   - component: {fileID: 602838736}
-  - component: {fileID: 602838735}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -574,20 +543,6 @@ Transform:
   m_Father: {fileID: 920167941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &602838735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602838733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e656a653e0113c42b1932144b6eedf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cammera: {fileID: 0}
-  parallaxEffect: 0.7
 --- !u!212 &602838736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -947,7 +902,6 @@ GameObject:
   m_Component:
   - component: {fileID: 802760656}
   - component: {fileID: 802760658}
-  - component: {fileID: 802760657}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -972,20 +926,6 @@ Transform:
   m_Father: {fileID: 920167941}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &802760657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802760655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e656a653e0113c42b1932144b6eedf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cammera: {fileID: 0}
-  parallaxEffect: 0.15
 --- !u!212 &802760658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1073,7 +1013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -357, y: -112}
+  m_AnchoredPosition: {x: -3, y: -112}
   m_SizeDelta: {x: 380.95, y: 119.26001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844066984
@@ -1508,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -357, y: -449}
+  m_AnchoredPosition: {x: -3, y: -449}
   m_SizeDelta: {x: 472.62, y: 135.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265855890
