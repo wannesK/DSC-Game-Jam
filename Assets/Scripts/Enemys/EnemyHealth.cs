@@ -17,8 +17,8 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("enemyHurt");
-
         Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        SoundManager.PlaySound("SwordImpact");
 
         if (health < 1)
         {

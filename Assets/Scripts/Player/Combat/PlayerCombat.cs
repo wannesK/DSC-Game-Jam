@@ -36,7 +36,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 CheckAttackCount();
                 StopCharacterWhenAttack();
-                //MusicManager.PlaySound("Sword");
+                SoundManager.PlaySound("Sword");
 
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)

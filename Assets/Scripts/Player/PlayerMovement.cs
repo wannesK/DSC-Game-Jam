@@ -77,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody2D.velocity = Vector2.up * secondJumpForce;
                 canDoubleJump = false;
             }
-            //MusicManager.PlaySound("Jump");
         }
     }
 
