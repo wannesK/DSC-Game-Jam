@@ -15,7 +15,7 @@ public class TrapDamage : MonoBehaviour
     {        
         if (canTakeDamage == false)
         {
-            Invoke("CanTakeDamage", 1.5f);
+            Invoke("CanTakeDamage", 1f);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
