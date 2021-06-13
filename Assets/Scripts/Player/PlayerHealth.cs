@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject deadScreen;
     public GameObject deadEffect;
-
+    public GameObject waterEffect;
     private Rigidbody2D rigid;
     private CheckPointManager pointManager;
     private void Awake()
@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (other.CompareTag("Water"))
         {
+            Instantiate(waterEffect, transform.position, Quaternion.identity);
             rigid.velocity = Vector2.up * 13;
             DecreasePlayerHealth();
         }
@@ -67,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
             Time.timeScale = 0.6f;
 
             anim.SetTrigger("Dead");
-            Invoke("SetActiveDeadScreen", 0.8f);
+            Invoke("SetActiveDeadScreen", 0.5f);
             DestroyPlayer();
 
         }
@@ -75,16 +76,16 @@ public class PlayerHealth : MonoBehaviour
 
     private void DestroyPlayer()
     {
-        //Instantiate(deadEffect, transform.position, Quaternion.identity);
         Destroy(movement.gameObject, 0.9f);
         Destroy(movementP.gameObject, 0.9f);
     }
     private void SetActiveDeadScreen()
     {
+        Time.timeScale = 0f;
         deadScreen.SetActive(true);
     }
 
-    private void CheckHearts()
+    public void CheckHearts()
     {
         if (playerHealth == 2)
         {

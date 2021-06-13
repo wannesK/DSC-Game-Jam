@@ -12,10 +12,14 @@ public class GameManager : MonoBehaviour
 
     public CameraControl camControl;
     public TrapDamage trap;
+    private PlayerHealth player;
 
     public bool parallel = false;
 
-    
+    private void Awake()
+    {
+        FindPlayer();
+    }
     void Update()
     {       
         if (Input.GetKeyDown(KeyCode.Space))
@@ -59,11 +63,16 @@ public class GameManager : MonoBehaviour
                 hearts[1].SetActive(false);
 
             }
-            camControl.TurnCameraToPlayer();
+            FindPlayer();
             trap.FindPlayerTag();
+            camControl.TurnCameraToPlayer();
+
         }
     }
-
+    private void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
     public void CheckForParallel()
     {
         if (parallel == false)

@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     public FacingDirection facingDirection;
 
     private bool canDoubleJump;
-    //public ParticleSystem dust;
 
     private Rigidbody2D rigidBody2D;
     private BoxCollider2D boxCollider2D;
@@ -143,9 +142,4 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
-
-    //private void CreateDust()
-    //{
-    //    dust.Play();
-    //}
 }

@@ -28,8 +28,6 @@ public class ParallelMovement : MonoBehaviour
     public MovementStates movementState;
     public FacingDirection facingDirection;
 
-    //public ParticleSystem dust;
-
     private Rigidbody2D rigidBody2D;
     private BoxCollider2D boxCollider2D;
     private PlayerCombatAnimationContoller animController;
@@ -55,34 +53,6 @@ public class ParallelMovement : MonoBehaviour
 
     private void HandleMovement()
     {
-        //rigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    rigidBody2D.velocity = new Vector2(-movementSpeed, rigidBody2D.velocity.y);
-
-        //    if (IsGrounded())
-        //    {
-        //        //CreateDust();
-        //    }
-        //}
-        //else
-        //{
-        //    if (Input.GetKey(KeyCode.D))
-        //    {
-        //        rigidBody2D.velocity = new Vector2(+movementSpeed, rigidBody2D.velocity.y);
-        //        if (IsGrounded())
-        //        {
-        //            //CreateDust();
-        //        }
-
-        //    }
-        //    else //NO KEYS PRESSED
-        //    {
-        //        rigidBody2D.velocity = new Vector2(0, rigidBody2D.velocity.y);
-        //        rigidBody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        //    }
-        //}
-
         float h = Input.GetAxisRaw("Horizontal");
         rigidBody2D.velocity = new Vector2(h * movementSpeed, rigidBody2D.velocity.y);
     }
@@ -92,7 +62,6 @@ public class ParallelMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
             rigidBody2D.velocity = Vector2.up * jumpForce;
-            //MusicManager.PlaySound("Jump");
         }
     }
 
@@ -159,9 +128,4 @@ public class ParallelMovement : MonoBehaviour
                 break;
         }
     }
-
-    //private void CreateDust()
-    //{
-    //    dust.Play();
-    //}
 }

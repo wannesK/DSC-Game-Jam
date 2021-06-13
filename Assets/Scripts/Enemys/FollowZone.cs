@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowZone : MonoBehaviour
 {
-    private PlayerHealth player;
     private EnemyAI enemyParent;
     private bool inRange;
     private Animator anim;
@@ -13,7 +12,6 @@ public class FollowZone : MonoBehaviour
     {
         enemyParent = GetComponentInParent<EnemyAI>();
         anim = GetComponentInParent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
     private void Update()
     {
@@ -22,15 +20,6 @@ public class FollowZone : MonoBehaviour
             enemyParent.Flip();
         }
 
-        if (player.playerHealth < 1)
-        {
-            inRange = false;
-            gameObject.SetActive(false);
-            enemyParent.triggerArea.SetActive(true);
-            enemyParent.inRange = false;
-            enemyParent.SelectTarget();
-
-        }
     }
 
     private void OnTriggerStay2D(Collider2D collider)

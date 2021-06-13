@@ -5,35 +5,25 @@ using UnityEngine;
 public class TrapDamage : MonoBehaviour
 {
     private PlayerHealth health;
-    private bool canTakeDamage = true;
+    public GameManager manager;
     private void Start()
     {
         FindPlayerTag();
     }
-
-    private void Update()
-    {        
-        if (canTakeDamage == false)
-        {
-            Invoke("CanTakeDamage", 1f);
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && canTakeDamage == true)
+        if (other.name == "Player" && manager.parallel == false) 
         {
-            health.DecreasePlayerHealth();
-            canTakeDamage = false;
+            other.gameObject.GetComponent<PlayerHealth>().DecreasePlayerHealth();
+        }
+        else if (other.name == "PlayerSword" && manager.parallel == true) 
+        {
+            other.gameObject.GetComponent<PlayerHealth>().DecreasePlayerHealth();
         }
     }
     
     public void FindPlayerTag()
     {
         health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-    }
-
-    private void CanTakeDamage()
-    {
-        canTakeDamage = true;
     }
 }
